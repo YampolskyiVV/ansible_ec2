@@ -1,0 +1,11 @@
+# EC2 instans variable 
+
+ ec2:
+  region: us-west-2
+  credentials: amazon_epam
+  image: ami-6f68cf0f
+  instance_type: t2.micro
+  subnet: subnet-8acf44ed
+  tags:
+    Name: EC2_AWS_EPAM
+    Owner: VY

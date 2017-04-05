@@ -1,0 +1,26 @@
+- name: Launch EC2 instance
+  ec2:
+     key_name: "{{ ec2.credentials }}"
+     region: "{{ ec2.region }}"
+     instance_type: "{{ ec2.instance_type }}"
+     image: "{{ ec2.image }}"
+     wait: yes
+     wait_timeout: 500
+     count: 1
+     instance_tags: "{{ ec2.tags }}"
+     monitoring: no
+     vpc_subnet_id: "{{ ec2.subnet }}"
+     assign_public_ip: yes
+     group: Vol_AWS_Security_Group
+  register: ec2_out
+  notify: Add new instance to host group
+
+- name: Wait for SSH to come up
+  wait_for:
+    host: "{{ item.public_dns_name }}"
+    port: 22
+    delay: 60
+    timeout: 320
+    state: started
+  with_items: "{{ ec2_out.instances }}"
+

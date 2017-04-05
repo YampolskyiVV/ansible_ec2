@@ -1,0 +1,6 @@
+---
+- name: Add new instance to host group
+  add_host:
+    hostname: "{{ item.public_ip }}"
+    groupname: launched
+  with_items: "{{ ec2_out.instances }}"
