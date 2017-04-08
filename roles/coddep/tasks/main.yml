@@ -1,0 +1,19 @@
+---
+
+- name: Install ruby aws-cli wget packages
+  yum: name={{ item }} state=present
+  with_items:
+    - ruby
+    - wget
+  
+- name: Download source CodeDeploy script
+  get_url: 
+    url: "{{ codedeploy.url }}"
+    dest: "{{ codedeploy.user_dir }}"
+    mode: 0755
+    
+- name: install CodeDeploy
+  command: /home/ec2-user/install auto
+
+- name: Started codedeploy-agent
+  service: name=codedeploy-agent state=started

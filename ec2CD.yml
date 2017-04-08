@@ -1,0 +1,21 @@
+---
+
+- name: Configure SGroup
+  hosts: localhost
+  tasks:
+    - include_role:
+        name: sgroup
+
+- name: Creating role
+  hosts: localhost
+  tasks:
+    - include_role:
+        name: iamroles
+
+- name: Create a EC2 instance
+  hosts: localhost
+  tasks:
+    - include_role:
+        name: ec2CD
+
+

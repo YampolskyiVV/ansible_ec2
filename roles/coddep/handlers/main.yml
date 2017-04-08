@@ -1,0 +1,4 @@
+---
+
+- name: install CodeDeploy
+  shell: ./home/ec2-user/install auto
