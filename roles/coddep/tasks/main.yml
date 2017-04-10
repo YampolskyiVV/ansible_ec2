@@ -1,6 +1,6 @@
 ---
 
-- name: Install ruby aws-cli wget packages
+- name: Install ruby wget packages
   yum: name={{ item }} state=present
   with_items:
     - ruby

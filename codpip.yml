@@ -20,12 +20,3 @@
   tasks:
     - include_role:
         name: coddep
-
-- name: Install webserver
-  hosts: launched
-  user: ec2-user
-  become: True
-  become_method: sudo
-  tasks:
-    - include_role:
-        name: web
