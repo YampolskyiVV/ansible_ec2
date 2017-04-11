@@ -8,12 +8,13 @@
   subnet: subnet-8acf44ed
   iamrole: CDDemoAppInstanceRole
   tags:
-    Name: EC2_AWS_EPAM
+    Name: CDDemoAppTest1
     Owner: VY
 
  codedeploy:
+   tags:
+     name: CodeDeployTest
    url: https://aws-codedeploy-us-west-2.s3.amazonaws.com/latest/install
    user_dir: /home/ec2-user
    file: install
-
- image_code_commit: ami-8ca83fec 
+   image: ami-8ca83fec 

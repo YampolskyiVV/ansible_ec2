@@ -3,7 +3,7 @@
      key_name: "{{ ec2.credentials }}"
      region: "{{ ec2.region }}"
      instance_type: "{{ ec2.instance_type }}"
-     image: "{{ ec2.image }}"
+     image: "{{ codedeploy.image }}"
      wait: yes
      wait_timeout: 500
      count: 2 
