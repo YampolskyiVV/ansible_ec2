@@ -8,7 +8,7 @@
   subnet: subnet-8acf44ed
   iamrole: CDDemoAppInstanceRole
   tags:
-    Name: CDDemoAppTest1
+    Name: CDDemoAppTest2
     Owner: VY
 
  codedeploy:
@@ -18,3 +18,8 @@
    user_dir: /home/ec2-user
    file: install
    image: ami-8ca83fec 
+
+ jenk:
+   tags:
+     name: Jenkins 
+
