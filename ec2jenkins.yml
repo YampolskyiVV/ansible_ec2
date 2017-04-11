@@ -1,0 +1,8 @@
+---
+
+- name: Create a EC2 instance
+  hosts: localhost
+  tasks:
+    - include_role:
+        name: jenksg 
+
